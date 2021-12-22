@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me</title>
+    <style>
+        body {
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        button {
+            background-color: red;
+            padding: 15px;
+            min-width: 120px;
+            color: #fff;
+            position: absolute;
+            transition: .5s ease;
+        }
+        .no {
+            top: 40%;
+            left: 50%;
+        }
+        .yes {
+            top: 40%;
+            left: 40%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="no">NO</button>
+    <button class="yes">YES</button>
+    <script>
+        var btnNo = document.querySelector('.no');
+        var btnYes = document.querySelector('.yes');
+        btnNo.addEventListener('mouseover', changeOffset)
+        function changeOffset() {            
+            var x = Math.floor(Math.random() * window.innerWidth - btnNo.offsetWidth);
+            var y = Math.floor(Math.random() * window.innerHeight - btnNo.offsetHeight);
+            if(x<0) x=0;
+            if(y<0) y=0;
+            this.style.left = x + 'px';
+            this.style.top = y + 'px';
+            var intervalLiuLiu = setInterval(() => {
+                btnNo.textContent='Liu liu :)'    
+                clearInterval(intervalLiuLiu)                                
+            }, 1000);
+            setTimeout(() => {
+                btnNo.textContent='NO'  
+            }, 3000);        
+        }
+        btnYes.addEventListener('click',function submit() {
+            alert('cái này chưa làm');            
+        })
+    </script>
+</body>
+
+</html>
